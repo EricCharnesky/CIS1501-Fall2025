@@ -1,5 +1,88 @@
 import random
 
+
+#https://learn.zybooks.com/zybook/UMDEARBORNCIS1501CharneskyFall2025/chapter/5/section/13
+
+roll_counts = {}
+
+
+how_many_sides = int(input("How many sides are your dice?"))
+how_many_dice = int(input("How many dice do you want to roll?"))
+num_rolls = int(input("Enter number of rolls:\n"))
+
+for number in range(how_many_dice, how_many_dice*how_many_sides+1):
+    roll_counts[number] = 0
+
+for i in range(num_rolls):
+    roll_total = 0
+    for dice in range(how_many_dice):
+        roll_total += random.randint(1, how_many_sides)
+
+    roll_counts[roll_total] += 1
+    #print(f"Roll {i} is {roll_total} ({die1} + {die2})")
+
+for roll in roll_counts:
+    print(f'{roll}: {roll_counts[roll] / num_rolls * 100:.3f}%')
+
+
+
+
+
+total = 0
+
+# sentinel values - unusual invalid values to stop a loop
+while True:
+    receipt = float(input("Enter a receipt value or -1 to stop"))
+    if receipt == -1:
+        # hard stop of the loop, do not pass go, do not continue
+        break # jump to the end of the loop, next line after
+    total += receipt
+
+print("this is the line after the loop")
+
+students = ['Eric', 'Jeb', 'Vivi', 'Journey']
+for number, name in enumerate(students):
+    print(f'Student #{number}: {name}')
+
+for number in range(1, 100):
+    if number % 2: # shortcut for if number % 2 == 1 - because 1 is true
+        continue # jump back to the loop header
+    print(number)
+
+for even_number in range(2, 100, 2): # 3rd thing is a count by value
+    print(even_number)
+
+for count_down in range(10, -1, -1):
+    print(count_down)
+print("blastoff!")
+
+
+
+total = 0
+
+# sentinel values - unusual invalid values to stop a loop
+receipt = float(input("Enter a receipt value or -1 to stop"))
+while receipt != -1:
+    total += receipt
+    receipt = float(input("Enter a receipt value or -1 to stop"))
+else:
+    print("Thanks for totaling your drawer! If you lost any money, we're taking it from your paycheck!")
+gradebook = {}
+
+# sentinel value to stop the loop
+name = input("Enter a student name or QUIT to stop")
+while name.upper() != 'QUIT':
+    score = float(input(f"enter the score for {name}"))
+    gradebook[name] = score
+    name = input("Enter a student name or QUIT to stop")
+
+number_of_students = int(input("How many students are in your class?"))
+
+for student in range(number_of_students):
+    name = input(f"Enter student #{student}'s name")
+    score = float(input(f"enter the score for {name}"))
+    gradebook[name] = score
+
 rows = int(input("Enter the number of rows for a rectangle"))
 columns = int(input("Enter the number of columns for a rectangle"))
 
@@ -83,6 +166,9 @@ print(alphabet)
 
 for index in range(len(alphabet)):
     alphabet[index] = alphabet[index].upper()
+
+for index, value in enumerate(alphabet):
+    alphabet[index] = value.upper()
 
 
 index = 0
