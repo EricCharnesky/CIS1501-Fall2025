@@ -1,6 +1,6 @@
 from unittest import TestCase
-from main import LottoTicket
-from main import Chair
+from notmain import LottoTicket
+from chair import Chair
 
 
 class TestLottoTicket(TestCase):
