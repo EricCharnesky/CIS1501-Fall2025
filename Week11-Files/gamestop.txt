@@ -1,0 +1,9 @@
+zelda
+1
+60
+mario
+1
+60
+joy cons
+4
+29.99
